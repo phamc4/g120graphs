@@ -2,3 +2,6 @@
 
 def graph():
     return 
+
+def choropleth():
+    return 0
