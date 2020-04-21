@@ -21,6 +21,10 @@ def shaded_alpha_area(p,n, alpha):
 def graph():
     return 
 
+
+
+def scatterplot(x,y):
+    return plt.scatter(x,y)
 def scatter():
     pass
 
@@ -49,6 +53,7 @@ ax.plot(x,x)
 def choropleth():
     return 0
 
+
 def bootstrap_sample_medians(data, n_bootstrap_samples=10000):
     bootstrap_sample_medians = []
     for i in range(n_bootstrap_samples):
@@ -58,3 +63,4 @@ def bootstrap_sample_medians(data, n_bootstrap_samples=10000):
 
 def choropleth():
     return 0
+
