@@ -5,6 +5,7 @@ def graph():
 
 
 
+
 def beta_distr():
     fig, ax = plt.subplots(figsize=(10,5))
     x = np.linspace(0,1,100)
@@ -16,6 +17,17 @@ def beta_distr():
     ax.legend(title=r"($\alpha,\beta$)", loc="upper left")
     ax.set_xlabel("p")
     ax.set_ylabel("pdf")
+
+def choropleth():
+    return 0
+
+
+def bootstrap_sample_medians(data, n_bootstrap_samples=10000):
+    bootstrap_sample_medians = []
+    for i in range(n_bootstrap_samples):
+        bootstrap_sample = np.random.choice(data, size=len(data), replace=True)
+        bootstrap_sample_medians.append(np.median(bootstrap_sample))
+    return bootstrap_sample_medians
 
 def choropleth():
     return 0
