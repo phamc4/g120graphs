@@ -14,8 +14,6 @@ def shaded_alpha_area(p,n, alpha):
     ax.fill_between(x, normal_approx.pdf(x), 
                 where=(x >= normal_approx.ppf(1-alpha)), color="red", alpha=0.5)
     ax.set_title("Significance Region")
-<<<<<<< HEAD
-
 
 def twin_x():
      #Twin X /  Different Y
@@ -36,9 +34,7 @@ def twin_x():
     ax2.set_ylabel('')
     ax2.plot(x, y2, color=color)
     ax2.tick_params(axis='', labelcolor=color)
-=======
     
-
 def graph():
     return 
 
@@ -52,4 +48,3 @@ def bootstrap_sample_medians(data, n_bootstrap_samples=10000):
 def choropleth():
     return 0
 
->>>>>>> f92d6d298f398387056f8d40b421d7281205821b
