@@ -1,4 +1,6 @@
 #! python3
 
+
 def graph():
-    return 
+	#my plot    
+	return 
