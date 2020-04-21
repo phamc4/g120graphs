@@ -1,11 +1,13 @@
 #! python3
+import numpy as np
+import pandas as pd
 
 def graph():
     return 
 
-
-
-
+def eddieplot(df):
+    df.plotting.scattermatrix()
+    return
 
 def beta_distr():
     fig, ax = plt.subplots(figsize=(10,5))
@@ -25,11 +27,8 @@ x=list(range(10))
 fig, ax = plt.subplots()
 ax.plot(x,x)
 
-
-
 def choropleth():
     return 0
-
 
 def bootstrap_sample_medians(data, n_bootstrap_samples=10000):
     bootstrap_sample_medians = []
