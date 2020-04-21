@@ -1,5 +1,6 @@
 #! python3
 
+
 def shaded_alpha_area(p,n, alpha):
     binomial_mean = p * n
     binomial_var = n * p * (1-p)
@@ -13,6 +14,7 @@ def shaded_alpha_area(p,n, alpha):
     ax.fill_between(x, normal_approx.pdf(x), 
                 where=(x >= normal_approx.ppf(1-alpha)), color="red", alpha=0.5)
     ax.set_title("Significance Region")
+<<<<<<< HEAD
 
 
 def twin_x():
@@ -34,3 +36,20 @@ def twin_x():
     ax2.set_ylabel('')
     ax2.plot(x, y2, color=color)
     ax2.tick_params(axis='', labelcolor=color)
+=======
+    
+
+def graph():
+    return 
+
+def bootstrap_sample_medians(data, n_bootstrap_samples=10000):
+    bootstrap_sample_medians = []
+    for i in range(n_bootstrap_samples):
+        bootstrap_sample = np.random.choice(data, size=len(data), replace=True)
+        bootstrap_sample_medians.append(np.median(bootstrap_sample))
+    return bootstrap_sample_medians
+
+def choropleth():
+    return 0
+
+>>>>>>> f92d6d298f398387056f8d40b421d7281205821b
