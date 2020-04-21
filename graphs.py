@@ -62,8 +62,26 @@ def bootstrap_sample_medians(data, n_bootstrap_samples=10000):
     return bootstrap_sample_medians
 
 def choropleth():
+    # import plotly as py
+    # import plotly.express as px
+    # import json
+    # from urllib.request import urlopen
 
-  #add in plotly express
+    with urlopen('https://raw.githubusercontent.com/plotly/datasets/master/geojson-counties-fips.json') as response:
+    counties = json.load(response)
+
+    fig = px.choropleth(df, geojson=counties, locations='fips', color='3 day',
+                           color_continuous_scale=px.colors.sequential.Inferno,
+                           range_color=(0, 40),
+                           scope="usa",
+                           labels={'3 day':'3-Day Percent Change'},
+                           title='3-Day Percent Change in Counties',
+                           hover_data=[df['county'], df['Prev 3 day']]
+                          )
+
+    fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
+    #fig.write_html('county.html')
+    fig.show()
     return 0
 
 
