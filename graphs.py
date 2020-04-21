@@ -4,6 +4,7 @@ def graph():
     return 
 
 
+
 def beta_distr():
     fig, ax = plt.subplots(figsize=(10,5))
     x = np.linspace(0,1,100)
@@ -15,3 +16,7 @@ def beta_distr():
     ax.legend(title=r"($\alpha,\beta$)", loc="upper left")
     ax.set_xlabel("p")
     ax.set_ylabel("pdf")
+
+def choropleth():
+    return 0
+
