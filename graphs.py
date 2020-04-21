@@ -4,6 +4,5 @@ def graph():
     return 
 
 def choropleth():
+  #add in plotly express
     return 0
-
-# add in plotly express
