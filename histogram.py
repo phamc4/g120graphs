@@ -10,6 +10,10 @@ import matplotlib.patches as patches
 import mplcyberpunk
 import seaborn as sns
 
+
+
+
+
 # Cyberpunk Histogram with KDE
 
 """
@@ -20,29 +24,32 @@ REQUIRED MODULES (outside of normal DS imports):
 - seaborn
 """
 
-# Draw Plot
-plt.figure(figsize=(12,6), dpi= 80)
+def distplot(ax:object, series:pd.Series, cybertheme:bool=True, dropna:bool=False) -> None:
+    """ Plots 2D density plot visualization with histogram 
+        
+        Parameters
+        ----------
+        ax: Axes object
+        
+        series: array-like, pd.Series of a feature 
+            data array
+        cybertheme: bool, optional
+            sets cell plt theme to "cyberpunk"
+        dropna: bool, optional
+            drops null values in series, will not be included in plot
+    """
+    # Set Cell Plot Style to cyberpunk
+    if cybertheme:
+        plt.style.use("cyberpunk")
+    # Plot Series
+    sns.distplot(
+            series, 
+            color="red",
+            ax=ax,
+            kde_kws={
+                "color":'white',
+                "shade":True,
+                "alpha":0.7})
 
-# Plot Points
-mpg_kde_plot_5 = sns.distplot(auto_df.loc[auto_df['Cylinders'] == 5, "Gas Mileage (Combined)"],
-             color="red",
-             kde_kws={
-                 "color":'white',
-                 "shade":True,
-                 "alpha":0.7,
-             }
-            )
 
-
-# Decoration
-plt.title('\nHistogram of MPG by 5-Cylinder Engines with KDE/Dist\n', fontsize=22)
-plt.xlabel("MPG\n", fontsize=18)
-plt.ylabel("Density (KDE)\n", fontsize=18)
-mplcyberpunk.add_underglow()
-mplcyberpunk.add_glow_effects()
-
-
-# Show Plot
-plt.subplots_adjust(left=0, bottom=0, right=1.1, top=1, wspace=1, hspace=0)
-plt.show()
 
